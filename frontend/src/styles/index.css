@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;:root {
+  color-scheme: light dark;
+
+  /* Accent color — overridden at runtime by the accent picker in Settings.
+     Components style with Tailwind classes like text-brand / bg-brand, which
+     reference these variables (see tailwind.config.js). */
+  --accent: 47 109 246;       /* default null blue #2f6df6 */
+  --accent-muted: 91 142 247; /* hover/secondary tone  #5b8ef7 */
+
+  /* Liquid glass surfaces — used ONLY by cards/panels (`.card`, `.glass-bar`),
+     never by the page background or form controls. */
+  --glass-bg: 255 255 255 / 0.55;
+  --glass-border: 255 255 255 / 0.6;
+  --glass-highlight: 255 255 255 / 0.45;
+}
+
+:is(.dark) {
+  --glass-bg: 24 24 27 / 0.5;
+  --glass-border: 255 255 255 / 0.08;
+  --glass-highlight: 255 255 255 / 0.06;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface-light text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04";
+}
+
+/* Browsers without backdrop-filter get a near-solid fallback. */
+@supports not (backdrop-filter: blur(1px)) {
+  :root {
+    --glass-bg: 255 255 255 / 0.92;
+  }
+  :is(.dark) {
+    --glass-bg: 24 24 27 / 0.94;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium
+      transition-colors focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+  .btn-primary {
+    @apply bg-brand text-white hover:bg-brand-muted dark:hover:bg-brand-muted;
+  }
+  .btn-ghost {
+    @apply text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800;
+  }
+  /* Liquid glass card: translucent fill, hairline border, inner top highlight
+     and a soft drop shadow. Panels only — page background, buttons and form
+     controls keep their classic solid colors. */
+  .card {
+    border-radius: 0.75rem;
+    border: 1px solid rgb(var(--glass-border));
+    background: rgb(var(--glass-bg));
+    -webkit-backdrop-filter: blur(20px) saturate(1.6);
+    backdrop-filter: blur(20px) saturate(1.6);
+    box-shadow:
+      0 8px 28px rgba(17, 24, 39, 0.08),
+      inset 0 1px 0 rgb(var(--glass-highlight));
+  }
+  .input {
+    @apply w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base
+      text-neutral-900 placeholder:text-neutral-400
+      focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none
+      dark:border-neutral-700 dark:bg-neutral-950 dark:text-neutral-100;
+  }
+  .icon-button {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-lg text-neutral-600
+      hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800;
+  }
+  /* Sticky bar variant — available but not applied to the results header. */
+  .glass-bar {
+    background: rgb(var(--glass-bg));
+    -webkit-backdrop-filter: blur(22px) saturate(1.7);
+    backdrop-filter: blur(22px) saturate(1.7);
+    box-shadow:
+      0 1px 0 rgb(var(--glass-border)),
+      0 8px 24px rgba(17, 24, 39, 0.06);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.18s ease-out both;
+}
+
+/* Knowledge panel entrance: gentle rise + fade, respecting reduced motion. */
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-panel-in {
+  animation: panel-in 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-panel-in,
+  .animate-fade-in {
+    animation: none;
+  }
+}
+
+/* --- search encryption animation ---------------------------------------- */
+/* Plays on the results page: a query glyph is sealed into an envelope, the
+   envelope visibly scrambles ("encryption"), then a short relay of hops is
+   drawn — mirroring how null treats your query server-side. Purely cosmetic;
+   real transport protection is TLS. */
+.search-encrypt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 18vh;
+  pointer-events: none;
+}
+
+.search-encrypt-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 26px 34px;
+  border-radius: 18px;
+  border: 1px solid rgb(var(--accent) / 0.25);
+  background: rgb(var(--glass-bg));
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  backdrop-filter: blur(20px) saturate(1.6);
+  box-shadow:
+    0 12px 32px rgba(17, 24, 39, 0.16),
+    inset 0 1px 0 rgb(var(--glass-highlight));
+}
+
+.search-encrypt-glyphs {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 20px;
+  letter-spacing: 2px;
+  word-break: break-all;
+  max-width: 320px;
+  text-align: center;
+  color: rgb(var(--accent));
+}
+
+.search-encrypt-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(0 0 0 / 0.45);
+}
+
+:is(.dark) .search-encrypt-label {
+  color: rgb(255 255 255 / 0.45);
+}
+
+@keyframes encrypt-shimmer {
+  0% { opacity: 0.55; }
+  50% { opacity: 1; }
+  100% { opacity: 0.55; }
+}
+
+.search-encrypt-glyphs {
+  animation: encrypt-shimmer 0.9s ease-in-out infinite;
+}
+
+@keyframes encrypt-out {
+  to { opacity: 0; transform: translateY(-8px) scale(0.98); }
+}
+
+.search-encrypt-overlay.is-done {
+  animation: encrypt-out 0.25s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-encrypt-glyphs {
+    animation: none;
+  }
+  .search-encrypt-overlay.is-done {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* --- home screen backdrop: aurora ---------------------------------------- */
+/* Three large, heavily-blurred accent ribbons slowly rotating and drifting
+   over the plain page color, with a soft vignette so edges stay calm.
+   Purely decorative (z -1), GPU-cheap (transform/opacity only), and static
+   under prefers-reduced-motion. */
+.home-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home-bg::before,
+.home-bg::after,
+.home-bg .home-bg-ribbon {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  filter: blur(90px);
+  will-change: transform;
+}
+
+.home-bg::before {
+  width: 70vmax;
+  height: 48vmax;
+  left: -18vmax;
+  top: -14vmax;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(var(--accent) / 0.35),
+    rgb(var(--accent) / 0.12) 45%,
+    transparent 70%
+  );
+  animation: aurora-a 34s ease-in-out infinite alternate;
+}
+
+.home-bg::after {
+  width: 60vmax;
+  height: 42vmax;
+  right: -16vmax;
+  top: 6vmax;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(var(--accent-muted) / 0.32),
+    rgb(var(--accent-muted) / 0.10) 45%,
+    transparent 70%
+  );
+  animation: aurora-b 41s ease-in-out infinite alternate;
+}
+
+.home-bg .home-bg-ribbon {
+  width: 64vmax;
+  height: 40vmax;
+  left: 18vw;
+  bottom: -18vmax;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(var(--accent) / 0.22),
+    rgb(var(--accent-muted) / 0.10) 50%,
+    transparent 72%
+  );
+  animation: aurora-c 47s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-a {
+  from { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  to { transform: translate3d(9vw, 6vh, 0) rotate(18deg) scale(1.12); }
+}
+
+@keyframes aurora-b {
+  from { transform: translate3d(0, 0, 0) rotate(0deg) scale(1.05); }
+  to { transform: translate3d(-7vw, 9vh, 0) rotate(-14deg) scale(1); }
+}
+
+@keyframes aurora-c {
+  from { transform: translate3d(0, 0, 0) scale(1); opacity: 0.8; }
+  to { transform: translate3d(-6vw, -7vh, 0) scale(1.15); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-bg::before,
+  .home-bg::after,
+  .home-bg .home-bg-ribbon {
+    animation: none;
+  }
+}

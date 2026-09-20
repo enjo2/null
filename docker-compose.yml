@@ -1,0 +1,48 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    restart: unless-stopped
+    environment:
+      # Official Google Custom Search JSON API (100 free queries/day).
+      - NULL_GOOGLE_CSE_KEY=${NULL_GOOGLE_CSE_KEY:-}
+      - NULL_GOOGLE_CSE_ID=${NULL_GOOGLE_CSE_ID:-}
+      # Route captcha-gated engines through a local Tor SOCKS5 proxy when set.
+      - NULL_TOR_PROXY=${NULL_TOR_PROXY:-}
+      - NULL_ENABLED_ENGINES=${NULL_ENABLED_ENGINES:-duckduckgo,googleapi,bing,marginalia,mwmbl}
+      - NULL_ANALYTICS_ENABLED=${NULL_ANALYTICS_ENABLED:-true}
+      - NULL_CACHE_ENABLED=${NULL_CACHE_ENABLED:-true}
+      - NULL_CACHE_TTL_SECONDS=${NULL_CACHE_TTL_SECONDS:-600}
+      - NULL_RATE_LIMIT_PER_MINUTE=${NULL_RATE_LIMIT_PER_MINUTE:-30}
+      - NULL_TRUST_PROXY_HEADERS=${NULL_TRUST_PROXY_HEADERS:-true}
+      - NULL_ALLOW_HTML_SCRAPE_ENGINES=${NULL_ALLOW_HTML_SCRAPE_ENGINES:-false}
+    expose:
+      - "8000"
+    networks:
+      - null-net
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/healthz', timeout=4).status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${NULL_HTTP_PORT:-8080}:80"
+    networks:
+      - null-net
+
+networks:
+  null-net:
+
+# Optional PostgreSQL for a persistent, privacy-respecting analytics store.
+# volumes:
+#   pgdata:

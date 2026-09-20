@@ -1,0 +1,735 @@
+{
+  "generated_at": "2026-09-15T16:55:25.965490+00:00",
+  "meta": {
+    "source_material": "Public privacy policies and transparency reports; regenerate with python scripts/update_comparison.py",
+    "value_scale": "0=no, 1=partial, 2=yes"
+  },
+  "engines": [
+    {
+      "id": "null",
+      "name": "null",
+      "url": "https://null.example.invalid/",
+      "logo": null,
+      "open_source": 2,
+      "jurisdiction": "Self-hosted by you",
+      "features": [
+        {
+          "id": "no_logging",
+          "label": "No persistent query logging",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ip_logging",
+          "label": "No IP address logging",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_tracking",
+          "label": "No cross-site tracking / cookies",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_profiling",
+          "label": "No advertising profiles",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "https",
+          "label": "Full HTTPS (encrypted)",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ad_tracking",
+          "label": "Ads do not track you",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_data_share",
+          "label": "No results shared with third parties",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "cleartext_policy",
+          "label": "Clear, auditable privacy policy",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "open_source",
+          "label": "Open-source software",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "transparent_engines",
+          "label": "Transparent about backend engines",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_user_account",
+          "label": "No account required",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "delete_data",
+          "label": "Data deletion on request",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "independent_audit",
+          "label": "Independent privacy audit",
+          "value": 2,
+          "note": null
+        }
+      ],
+      "sources": [
+        "https://github.com/null-search/null",
+        "https://null.example.invalid/privacy"
+      ]
+    },
+    {
+      "id": "searxng",
+      "name": "SearXNG",
+      "url": "https://docs.searxng.org/",
+      "logo": null,
+      "open_source": 2,
+      "jurisdiction": "Community / self-hosted",
+      "features": [
+        {
+          "id": "no_logging",
+          "label": "No persistent query logging",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ip_logging",
+          "label": "No IP address logging",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_tracking",
+          "label": "No cross-site tracking / cookies",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_profiling",
+          "label": "No advertising profiles",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "https",
+          "label": "Full HTTPS (encrypted)",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ad_tracking",
+          "label": "Ads do not track you",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_data_share",
+          "label": "No results shared with third parties",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "cleartext_policy",
+          "label": "Clear, auditable privacy policy",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "open_source",
+          "label": "Open-source software",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "transparent_engines",
+          "label": "Transparent about backend engines",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_user_account",
+          "label": "No account required",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "delete_data",
+          "label": "Data deletion on request",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "independent_audit",
+          "label": "Independent privacy audit",
+          "value": 1,
+          "note": null
+        }
+      ],
+      "sources": [
+        "https://github.com/searxng/searxng",
+        "https://docs.searxng.org/"
+      ]
+    },
+    {
+      "id": "brave",
+      "name": "Brave Search",
+      "url": "https://search.brave.com/",
+      "logo": null,
+      "open_source": 1,
+      "jurisdiction": "USA (California)",
+      "features": [
+        {
+          "id": "no_logging",
+          "label": "No persistent query logging",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_ip_logging",
+          "label": "No IP address logging",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_tracking",
+          "label": "No cross-site tracking / cookies",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_profiling",
+          "label": "No advertising profiles",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "https",
+          "label": "Full HTTPS (encrypted)",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ad_tracking",
+          "label": "Ads do not track you",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_data_share",
+          "label": "No results shared with third parties",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "cleartext_policy",
+          "label": "Clear, auditable privacy policy",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "open_source",
+          "label": "Open-source software",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "transparent_engines",
+          "label": "Transparent about backend engines",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_user_account",
+          "label": "No account required",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "delete_data",
+          "label": "Data deletion on request",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "independent_audit",
+          "label": "Independent privacy audit",
+          "value": 1,
+          "note": "Self-reported audits and public transparency reports."
+        }
+      ],
+      "sources": [
+        "https://brave.com/privacy/",
+        "https://brave.com/search/",
+        "https://brave.com/privacy-guide/"
+      ]
+    },
+    {
+      "id": "duckduckgo",
+      "name": "DuckDuckGo",
+      "url": "https://duckduckgo.com/",
+      "logo": null,
+      "open_source": 2,
+      "jurisdiction": "USA (Pennsylvania)",
+      "features": [
+        {
+          "id": "no_logging",
+          "label": "No persistent query logging",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ip_logging",
+          "label": "No IP address logging",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_tracking",
+          "label": "No cross-site tracking / cookies",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_profiling",
+          "label": "No advertising profiles",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "https",
+          "label": "Full HTTPS (encrypted)",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ad_tracking",
+          "label": "Ads do not track you",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_data_share",
+          "label": "No results shared with third parties",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "cleartext_policy",
+          "label": "Clear, auditable privacy policy",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "open_source",
+          "label": "Open-source software",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "transparent_engines",
+          "label": "Transparent about backend engines",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_user_account",
+          "label": "No account required",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "delete_data",
+          "label": "Data deletion on request",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "independent_audit",
+          "label": "Independent privacy audit",
+          "value": 1,
+          "note": "Self-reported audits and public transparency reports."
+        }
+      ],
+      "sources": [
+        "https://duckduckgo.com/privacy",
+        "https://duckduckgo.com/transparency",
+        "https://duckduckgo.com/company/"
+      ]
+    },
+    {
+      "id": "startpage",
+      "name": "Startpage",
+      "url": "https://www.startpage.com/",
+      "logo": null,
+      "open_source": 1,
+      "jurisdiction": "Netherlands (EU)",
+      "features": [
+        {
+          "id": "no_logging",
+          "label": "No persistent query logging",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ip_logging",
+          "label": "No IP address logging",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_tracking",
+          "label": "No cross-site tracking / cookies",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_profiling",
+          "label": "No advertising profiles",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "https",
+          "label": "Full HTTPS (encrypted)",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ad_tracking",
+          "label": "Ads do not track you",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_data_share",
+          "label": "No results shared with third parties",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "cleartext_policy",
+          "label": "Clear, auditable privacy policy",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "open_source",
+          "label": "Open-source software",
+          "value": 1,
+          "note": "Core product is proprietary; underlying components may be open."
+        },
+        {
+          "id": "transparent_engines",
+          "label": "Transparent about backend engines",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "no_user_account",
+          "label": "No account required",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "delete_data",
+          "label": "Data deletion on request",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "independent_audit",
+          "label": "Independent privacy audit",
+          "value": 0,
+          "note": null
+        }
+      ],
+      "sources": [
+        "https://www.startpage.com/en/privacy-policy/",
+        "https://www.startpage.com/en/about-us/"
+      ]
+    },
+    {
+      "id": "google",
+      "name": "Google",
+      "url": "https://www.google.com/search",
+      "logo": null,
+      "open_source": 0,
+      "jurisdiction": "USA (California)",
+      "features": [
+        {
+          "id": "no_logging",
+          "label": "No persistent query logging",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_ip_logging",
+          "label": "No IP address logging",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_tracking",
+          "label": "No cross-site tracking / cookies",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_profiling",
+          "label": "No advertising profiles",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "https",
+          "label": "Full HTTPS (encrypted)",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ad_tracking",
+          "label": "Ads do not track you",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_data_share",
+          "label": "No results shared with third parties",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "cleartext_policy",
+          "label": "Clear, auditable privacy policy",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "open_source",
+          "label": "Open-source software",
+          "value": 0,
+          "note": "Core product is proprietary; underlying components may be open."
+        },
+        {
+          "id": "transparent_engines",
+          "label": "Transparent about backend engines",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_user_account",
+          "label": "No account required",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "delete_data",
+          "label": "Data deletion on request",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "independent_audit",
+          "label": "Independent privacy audit",
+          "value": 0,
+          "note": null
+        }
+      ],
+      "sources": [
+        "https://policies.google.com/privacy",
+        "https://myactivity.google.com/"
+      ]
+    },
+    {
+      "id": "bing",
+      "name": "Bing / Microsoft",
+      "url": "https://www.bing.com/",
+      "logo": null,
+      "open_source": 0,
+      "jurisdiction": "USA (Washington)",
+      "features": [
+        {
+          "id": "no_logging",
+          "label": "No persistent query logging",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_ip_logging",
+          "label": "No IP address logging",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_tracking",
+          "label": "No cross-site tracking / cookies",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_profiling",
+          "label": "No advertising profiles",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "https",
+          "label": "Full HTTPS (encrypted)",
+          "value": 2,
+          "note": null
+        },
+        {
+          "id": "no_ad_tracking",
+          "label": "Ads do not track you",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_data_share",
+          "label": "No results shared with third parties",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "cleartext_policy",
+          "label": "Clear, auditable privacy policy",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "open_source",
+          "label": "Open-source software",
+          "value": 0,
+          "note": "Core product is proprietary; underlying components may be open."
+        },
+        {
+          "id": "transparent_engines",
+          "label": "Transparent about backend engines",
+          "value": 0,
+          "note": null
+        },
+        {
+          "id": "no_user_account",
+          "label": "No account required",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "delete_data",
+          "label": "Data deletion on request",
+          "value": 1,
+          "note": null
+        },
+        {
+          "id": "independent_audit",
+          "label": "Independent privacy audit",
+          "value": 0,
+          "note": null
+        }
+      ],
+      "sources": [
+        "https://www.microsoft.com/en-us/privacy/privacystatement",
+        "https://about.ads.microsoft.com/"
+      ]
+    }
+  ],
+  "feature_definitions": [
+    {
+      "id": "no_logging",
+      "label": "No persistent query logging",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "no_ip_logging",
+      "label": "No IP address logging",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "no_tracking",
+      "label": "No cross-site tracking / cookies",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "no_profiling",
+      "label": "No advertising profiles",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "https",
+      "label": "Full HTTPS (encrypted)",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "no_ad_tracking",
+      "label": "Ads do not track you",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "no_data_share",
+      "label": "No results shared with third parties",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "cleartext_policy",
+      "label": "Clear, auditable privacy policy",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "open_source",
+      "label": "Open-source software",
+      "value": 0,
+      "note": "Core product is proprietary; underlying components may be open."
+    },
+    {
+      "id": "transparent_engines",
+      "label": "Transparent about backend engines",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "no_user_account",
+      "label": "No account required",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "delete_data",
+      "label": "Data deletion on request",
+      "value": 0,
+      "note": null
+    },
+    {
+      "id": "independent_audit",
+      "label": "Independent privacy audit",
+      "value": 0,
+      "note": null
+    }
+  ]
+}

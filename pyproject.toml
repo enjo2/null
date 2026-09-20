@@ -1,0 +1,12 @@
+[tool.vercel]
+entrypoint = "backend.app.main:app"
+
+[tool.vercel.scripts]
+# Build the React SPA and drop it into public/ so Vercel serves it from the
+# CDN while the FastAPI function handles /api/*.
+build = "cd frontend && npm install && npm run build && rm -rf ../public && mkdir -p ../public && cp -r dist/* ../public/"
+
+[tool.vercel.fastapi.static]
+# Exclude our own bundles from the function payload; static files are served
+# from the CDN via public/.
+exclude = false

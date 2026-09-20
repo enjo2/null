@@ -1,0 +1,19 @@
+# Exclude local/dev/dependency junk from the Vercel deployment bundle.
+node_modules
+frontend/node_modules
+backend/.venv
+.venv
+__pycache__
+*.pyc
+\.pytest_cache
+\.git
+dist
+frontend/dist
+docs
+.env
+*.log
+backend/tests
+scripts
+docker
+docker-compose.yml
+\AGENTS.md
