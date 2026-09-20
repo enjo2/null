@@ -20,6 +20,9 @@ backend/dist/
 .idea/
 .DS_Store
 
+# AI tool state
+.freebuff/
+
 # Test / coverage
 .pytest_cache/
 .coverage
