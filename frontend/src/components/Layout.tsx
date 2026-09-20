@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTheme } from "../lib/theme";
 
-const REPO_URL = "https://github.com/null-search/null";
+const REPO_URL = "https://github.com/enjo2/null";
 
 export function GitHubIcon({ size = 18 }: { size?: number }) {
   return (
